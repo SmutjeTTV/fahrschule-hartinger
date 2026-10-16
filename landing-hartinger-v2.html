@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Fahrschule Hartinger – Night Mode Landing (v2)</title>
+    <meta
+      name="description"
+      content="Dunkle, moderne Landingpage der Fahrschule Hartinger in Langenfeld – Führerschein mit stilvollem Night Mode Look, Crash-Kurs Theorie und Motorrad Bike to Bike Ausbildung."
+    />
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: "#38bdf8", // light sky
+                soft: "#0ea5e9",
+                strong: "#0284c7",
+              },
+              surface: {
+                DEFAULT: "#020617", // slate-950
+                soft: "#020617",
+                elevated: "#020617",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 22px 70px rgba(15, 23, 42, 0.6)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      .js-fade-in {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .js-fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-50 antialiased">
+    <div class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-30 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Brand -->
+            <a href="#hero-v2" class="flex items-center gap-2 group">
+              <div
+                class="h-9 w-9 rounded-xl bg-slate-900 flex items-center justify-center text-brand shadow-soft ring-1 ring-slate-700 group-hover:ring-brand-soft transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path
+                    d="M4 17V9a2 2 0 0 1 2-2h2.5l1-2h5l1 2H18a2 2 0 0 1 2 2v8"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5 17h14"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="8.5" cy="17.5" r="1.5" stroke-width="1.6" />
+                  <circle cx="15.5" cy="17.5" r="1.5" stroke-width="1.6" />
+                </svg>
+              </div>
+              <div class="flex flex-col leading-tight">
+                <span
+                  class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+                >
+                  Fahrschule Hartinger
+                </span>
+                <span class="text-sm text-slate-400">
+                  Langenfeld (Rheinland)
+                </span>
+              </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav
+              class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-300"
+            >
+              <a href="#team-v2" class="hover:text-brand-soft transition-colors"
+                >Team</a
+              >
+              <a
+                href="#theorieplan-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Theorieplan</a
+              >
+              <a
+                href="#preise-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Preise</a
+              >
+              <a
+                href="#angebot-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Angebot</a
+              >
+              <a
+                href="#fahrzeuge-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Fahrzeuge</a
+              >
+              <a
+                href="#crash-kurs-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Crash-Kurs</a
+              >
+              <a
+                href="#kontakt-v2"
+                class="hover:text-brand-soft transition-colors"
+                >Kontakt</a
+              >
+            </nav>
+
+            <!-- Desktop CTA -->
+            <div class="hidden md:flex items-center gap-3">
+              <a
+                href="tel:+492173687036"
+                class="inline-flex items-center gap-2 text-xs font-medium text-slate-300 hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1.1-2.1L19 15v3a2 2 0 0 1-2.2 2A15 15 0 0 1 4 7.2 2 2 0 0 1 5 4Z"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                02173 / 68 70 36
+              </a>
+              <a
+                href="#kontakt-v2"
+                class="inline-flex items-center justify-center rounded-full bg-brand-soft px-4 py-2.5 text-xs font-semibold text-slate-950 shadow-soft hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition-transform transform hover:scale-[1.03]"
+              >
+                Jetzt anmelden
+              </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button
+              type="button"
+              class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 p-2.5 text-slate-200 shadow-sm hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft"
+              aria-label="Navigation öffnen"
+              aria-expanded="false"
+              data-mobile-menu-toggle
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M4 7h16M4 12h16M4 17h16"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Nav -->
+          <nav
+            class="md:hidden border-t border-slate-800 pb-4 pt-2 space-y-1 text-sm font-medium text-slate-200 hidden"
+            data-mobile-menu
+          >
+            <a
+              href="#team-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Team</a
+            >
+            <a
+              href="#theorieplan-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Theorieplan</a
+            >
+            <a
+              href="#preise-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Preise</a
+            >
+            <a
+              href="#angebot-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Angebot</a
+            >
+            <a
+              href="#fahrzeuge-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Fahrzeuge</a
+            >
+            <a
+              href="#crash-kurs-v2"
+              class="block rounded-lg px-3 py-2 hover:bg-slate-900/60"
+              >Crash-Kurs (Theorie)</a
+            >
+            <a
+              href="#kontakt-v2"
+              class="mt-1 block rounded-full bg-brand-soft px-3 py-2 text-center font-semibold text-slate-950 shadow-soft hover:bg-brand-strong"
+              >Jetzt anmelden</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <main class="flex-1 bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
+        <!-- Hero -->
+        <section
+          id="hero-v2"
+          class="relative overflow-hidden border-b border-slate-800/60"
+        >
+          <div
+            class="pointer-events-none absolute inset-x-0 -top-40 h-80 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.25),_transparent_55%)]"
+            aria-hidden="true"
+          ></div>
+
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div
+              class="grid gap-12 lg:grid-cols-2 items-center py-14 md:py-20 lg:py-24"
+            >
+              <div class="space-y-7 js-fade-in">
+                <div
+                  class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-[11px] font-medium text-slate-200 shadow-soft"
+                >
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Schnell, sicher &amp; mit Spaß zum Führerschein
+                  <span class="text-slate-400">– jetzt auch im Night Mode</span>
+                </div>
+                <h1
+                  class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-50"
+                >
+                  Führerschein in Langenfeld –
+                  <span class="text-brand-soft">stylisch durch die Nacht.</span>
+                </h1>
+                <p class="text-sm sm:text-base text-slate-300 max-w-xl">
+                  Fahrschule Hartinger bringt dich mit modernen Autos,
+                  Motorrad&nbsp;Bike&nbsp;to&nbsp;Bike und strukturierten
+                  Crash-Kursen in Theorie sicher ans Ziel – mit persönlicher
+                  Betreuung und viel Ruhe in jeder Stunde.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                  <a
+                    href="#crash-kurs-v2"
+                    class="inline-flex items-center justify-center rounded-full bg-brand-soft px-6 py-3 text-sm sm:text-base font-semibold text-slate-950 shadow-soft hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 transition-transform transform hover:scale-[1.03]"
+                  >
+                    Crash-Kurs entdecken
+                  </a>
+                  <a
+                    href="#preise-v2"
+                    class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-6 py-3 text-sm sm:text-base font-semibold text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  >
+                    Preise ansehen
+                  </a>
+                </div>
+
+                <div
+                  class="flex flex-col sm:flex-row sm:items-center gap-4 pt-4 border-t border-slate-800 mt-4"
+                >
+                  <div class="flex items-center gap-3">
+                    <div class="flex -space-x-2">
+                      <span
+                        class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/20 text-xs font-semibold text-sky-300 ring-1 ring-sky-500/40"
+                        >LH</span
+                      >
+                      <span
+                        class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-semibold text-emerald-300 ring-1 ring-emerald-500/40"
+                        >MK</span
+                      >
+                      <span
+                        class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-500/20 text-xs font-semibold text-amber-300 ring-1 ring-amber-500/40"
+                        >AZ</span
+                      >
+                    </div>
+                    <div class="text-[11px] text-slate-300">
+                      <div class="flex items-center gap-1">
+                        <div class="flex text-amber-300">
+                          <span>★</span><span>★</span><span>★</span
+                          ><span>★</span><span>★</span>
+                        </div>
+                        <span class="font-semibold text-slate-50"
+                          >4,9 / 5,0</span
+                        >
+                      </div>
+                      <div>Google-Bewertung · &gt;120 Fahrschüler</div>
+                    </div>
+                  </div>
+                  <div class="text-[11px] text-slate-400">
+                    Zum Stadion 71 · 40764 Langenfeld (Rheinland)
+                    <span class="hidden sm:inline">·</span>
+                    <br class="sm:hidden" />
+                    Theorie Mo–Mi · 18:30–20:00 Uhr
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hero visual -->
+              <div class="relative js-fade-in">
+                <div
+                  class="relative aspect-[4/3] md:aspect-[5/4] rounded-3xl bg-slate-900/80 overflow-hidden shadow-soft ring-1 ring-slate-800"
+                >
+                  <img
+                    src="assets/hero-fuehrerschein.png"
+                    alt="Fahrlehrer überreicht einer Fahrschülerin vor dem Fahrschulauto den EU-Führerschein"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                  <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-slate-950/60 via-slate-900/0 to-slate-900/70"
+                  ></div>
+
+                  <div
+                    class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-medium text-emerald-200 ring-1 ring-emerald-500/50 backdrop-blur"
+                  >
+                    <span
+                      class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-slate-950 text-[10px]"
+                    >
+                      ✓
+                    </span>
+                    1:1-Betreuung in der Praxis
+                  </div>
+
+                  <div
+                    class="absolute bottom-4 right-4 w-60 rounded-2xl bg-slate-950/85 p-3 shadow-soft backdrop-blur ring-1 ring-slate-700"
+                  >
+                    <div class="flex items-center justify-between gap-2">
+                      <div>
+                        <p class="text-[11px] font-medium text-slate-400">
+                          Deine Vorteile
+                        </p>
+                        <p class="text-sm font-semibold text-slate-50">
+                          Moderne Ausbildung &amp; Motorrad Bike to Bike
+                        </p>
+                      </div>
+                      <div
+                        class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-brand-soft"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            d="M6 19V7a2 2 0 0 1 2-2h3l1 2h4a2 2 0 0 1 2 2v10"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5 19h14"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <dl
+                      class="mt-2 grid grid-cols-2 gap-2 border-t border-slate-800 pt-2 text-[11px] text-slate-300"
+                    >
+                      <div>
+                        <dt class="font-medium text-slate-400">
+                          Theorie Crash-Kurse
+                        </dt>
+                        <dd>Blockunterricht · noch Plätze frei</dd>
+                      </div>
+                      <div>
+                        <dt class="font-medium text-slate-400">
+                          Motorrad-Ausbildung
+                        </dt>
+                        <dd>Bike to Bike · Funkverbindung</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Social Proof & Leistungen (kompakter) -->
+        <section
+          id="angebot-v2"
+          class="py-12 md:py-16 border-b border-slate-800/70 bg-slate-950"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="js-fade-in max-w-3xl">
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+              >
+                Bekannt in Langenfeld
+              </p>
+              <h2
+                class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50"
+              >
+                Die Fahrschule Hartinger ist dein
+                <span class="text-brand-soft">Wegbegleiter zum Führerschein.</span>
+              </h2>
+              <p class="mt-3 text-sm sm:text-base text-slate-300">
+                Vom klassischen Führerschein über Theorie-Crash-Kurse bis zur
+                Motorrad&nbsp;Bike&nbsp;to&nbsp;Bike-Ausbildung – wir holen dich
+                genau da ab, wo du stehst, und begleiten dich persönlich bis zum
+                EU-Führerschein.
+              </p>
+            </div>
+
+            <div
+              class="grid gap-6 md:grid-cols-3 js-fade-in"
+            >
+              <!-- Klassische Ausbildung -->
+              <article
+                class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-soft transition-transform hover:-translate-y-1 hover:border-brand-soft"
+              >
+                <div
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800 text-brand-soft ring-1 ring-slate-700"
+                >
+                  B
+                </div>
+                <h3 class="mt-4 text-base font-semibold text-slate-50">
+                  Klassische Ausbildung
+                </h3>
+                <p class="mt-2 text-sm text-slate-300">
+                  Flexible Fahrstunden, moderne Autos und geduldige Fahrlehrer –
+                  perfekt für Schule, Studium oder Ausbildung.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+                  <li>· Individuelle Terminplanung</li>
+                  <li>· Theorie Mo–Mi 18:30–20:00 Uhr</li>
+                  <li>· Neue Fahrzeuge mit Assistenzsystemen</li>
+                </ul>
+              </article>
+
+              <!-- Crash-Kurs -->
+              <article
+                class="group flex flex-col rounded-2xl border border-brand-soft/60 bg-slate-900/90 p-5 shadow-soft ring-1 ring-brand-soft/50"
+              >
+                <div
+                  class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-300 ring-1 ring-emerald-500/40"
+                >
+                  🔥 Beliebt · Crash-Kurs
+                </div>
+                <h3 class="mt-3 text-base font-semibold text-slate-50">
+                  Theorie im Blockunterricht
+                </h3>
+                <p class="mt-2 text-sm text-slate-300">
+                  Konzentrierte Theorieeinheiten, mit denen du in kurzer Zeit
+                  prüfungsfit wirst – ideal in den Ferien.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-xs text-slate-300">
+                  <li>· Blockunterricht statt monatelanger Kurse</li>
+                  <li>· Aktuelle Lehrmittel &amp; Prüfungssimulation</li>
+                  <li>· „Es sind noch Plätze frei!“</li>
+                </ul>
+              </article>
+
+              <!-- Auffrischungsstunden -->
+              <article
+                class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900/80 p-5 shadow-soft transition-transform hover:-translate-y-1 hover:border-brand-soft"
+              >
+                <div
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-800 text-brand-soft ring-1 ring-slate-700"
+                >
+                  ∞
+                </div>
+                <h3 class="mt-4 text-base font-semibold text-slate-50">
+                  Auffrischungsstunden
+                </h3>
+                <p class="mt-2 text-sm text-slate-300">
+                  Zurück ans Steuer – mit sicheren Fahrtrainings für alle, die
+                  länger nicht gefahren sind.
+                </p>
+                <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+                  <li>· Individuelle Analyse deiner Fahrpraxis</li>
+                  <li>· Fokus auf Stadt, Landstraße oder Autobahn</li>
+                  <li>· Mehr Gelassenheit im Alltag</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Team & Fahrzeuge (kompakt, dunkler Look) -->
+        <section
+          id="fahrzeuge-v2"
+          class="py-12 md:py-16 border-b border-slate-800/70 bg-slate-950"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <!-- Team -->
+            <div id="team-v2" class="js-fade-in">
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+              >
+                Unser Team
+              </p>
+              <h2
+                class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50"
+              >
+                Persönlich, geduldig
+                <span class="text-brand-soft">&amp; mit viel Erfahrung.</span>
+              </h2>
+              <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl">
+                Ob Auto oder Motorrad – wir nehmen uns Zeit für deine Fragen
+                und üben so lange, bis du jede Situation auf der Straße sicher
+                meistern kannst.
+              </p>
+            </div>
+
+            <!-- Fahrzeuge Slider (optisch reduziert, Re-Use aus v1) -->
+            <div class="js-fade-in">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p
+                    class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+                  >
+                    Unsere Fahrzeuge
+                  </p>
+                  <h3
+                    class="mt-1 text-xl sm:text-2xl font-semibold tracking-tight text-slate-50"
+                  >
+                    Moderne Autos &amp; Motorräder
+                    <span class="text-brand-soft">für deine Ausbildung.</span>
+                  </h3>
+                </div>
+                <div class="hidden sm:flex items-center gap-2">
+                  <button
+                    type="button"
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 shadow-sm hover:bg-slate-800"
+                    aria-label="Fahrzeuge nach links scrollen"
+                    data-vehicle-slider-prev
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 shadow-sm hover:bg-slate-800"
+                    aria-label="Fahrzeuge nach rechts scrollen"
+                    data-vehicle-slider-next
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-5 relative">
+                <div
+                  class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory"
+                  data-vehicle-slider-track
+                >
+                  <!-- Fahrzeug 1 -->
+                  <article
+                    class="min-w-[260px] max-w-xs snap-start rounded-2xl border border-slate-800 bg-slate-900/90 shadow-soft flex-shrink-0"
+                  >
+                    <div class="aspect-[4/3] rounded-t-2xl overflow-hidden">
+                      <img
+                        src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                        alt="Weißer moderner Fahrschulwagen"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="p-4 text-xs sm:text-sm text-slate-300">
+                      <p class="font-semibold text-slate-50">
+                        Kompakter Stadtflitzer (Klasse B)
+                      </p>
+                      <p class="mt-1">
+                        Übersichtlich, leicht zu fahren und ideal für deine
+                        ersten Stunden im Stadtverkehr.
+                      </p>
+                      <p class="mt-2 text-[11px] text-slate-400">
+                        Manuell · Parkassistenz · Rückfahrkamera
+                      </p>
+                    </div>
+                  </article>
+
+                  <!-- Fahrzeug 2 -->
+                  <article
+                    class="min-w-[260px] max-w-xs snap-start rounded-2xl border border-slate-800 bg-slate-900/90 shadow-soft flex-shrink-0"
+                  >
+                    <div class="aspect-[4/3] rounded-t-2xl overflow-hidden">
+                      <img
+                        src="https://images.pexels.com/photos/2449452/pexels-photo-2449452.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                        alt="Modernes Automatik-Fahrzeug"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="p-4 text-xs sm:text-sm text-slate-300">
+                      <p class="font-semibold text-slate-50">
+                        Komfortables Automatik-Fahrzeug
+                      </p>
+                      <p class="mt-1">
+                        Perfekt, wenn du dich auf den Verkehr konzentrieren
+                        möchtest, ohne zu schalten.
+                      </p>
+                      <p class="mt-2 text-[11px] text-slate-400">
+                        Automatik · Fahrassistenz · Klimaautomatik
+                      </p>
+                    </div>
+                  </article>
+
+                  <!-- Fahrzeug 3 Motorrad -->
+                  <article
+                    class="min-w-[260px] max-w-xs snap-start rounded-2xl border border-slate-800 bg-slate-900/90 shadow-soft flex-shrink-0"
+                  >
+                    <div class="aspect-[4/3] rounded-t-2xl overflow-hidden">
+                      <img
+                        src="assets/fahrzeug-motorrad.png"
+                        alt="Motorrad für die Zweiradausbildung"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="p-4 text-xs sm:text-sm text-slate-300">
+                      <p class="font-semibold text-slate-50">
+                        Motorrad mit Funk (Klasse A)
+                      </p>
+                      <p class="mt-1">
+                        Für deine Zweiradausbildung mit direkter
+                        Funkverbindung – der Fahrlehrer begleitet dich auf dem
+                        Motorrad.
+                      </p>
+                      <p class="mt-2 text-[11px] text-slate-400">
+                        Bike to Bike · Moderne Funktechnik
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div
+                  class="mt-3 flex items-center justify-end gap-2 sm:hidden"
+                >
+                  <button
+                    type="button"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 shadow-sm hover:bg-slate-800"
+                    aria-label="Fahrzeuge nach links scrollen"
+                    data-vehicle-slider-prev
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-200 shadow-sm hover:bg-slate-800"
+                    aria-label="Fahrzeuge nach rechts scrollen"
+                    data-vehicle-slider-next
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Theorieplan & Preise (Night Card) -->
+        <section
+          id="theorieplan-v2"
+          class="py-12 md:py-16 border-b border-slate-800/70 bg-slate-950"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 js-fade-in">
+            <div
+              class="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-start"
+            >
+              <div>
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+                >
+                  Theorieunterricht in Langenfeld
+                </p>
+                <h2
+                  class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50"
+                >
+                  Klarer Plan
+                  <span class="text-brand-soft">– klare Zeiten.</span>
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-300">
+                  Moderne Unterrichtsräume, anschauliche Beispiele und echte
+                  Prüfungssimulationen – damit du die Theorie nicht nur
+                  auswendig lernst, sondern wirklich verstehst.
+                </p>
+                <dl
+                  class="mt-5 grid gap-4 text-sm text-slate-200 sm:grid-cols-2"
+                >
+                  <div
+                    class="rounded-xl bg-slate-900/90 p-4 border border-slate-800"
+                  >
+                    <dt class="font-semibold text-slate-50">
+                      Öffnungszeiten Büro
+                    </dt>
+                    <dd class="mt-1 text-sm text-slate-300">
+                      Montag bis Mittwoch<br />16:30 – 18:30 Uhr
+                    </dd>
+                  </div>
+                  <div
+                    class="rounded-xl bg-slate-900/90 p-4 border border-slate-800"
+                  >
+                    <dt class="font-semibold text-slate-50">
+                      Theorieunterricht
+                    </dt>
+                    <dd class="mt-1 text-sm text-slate-300">
+                      Montag, Dienstag &amp; Mittwoch<br />18:30 – 20:00 Uhr
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div id="preise-v2" class="space-y-4">
+                <div
+                  class="rounded-2xl border border-slate-800 bg-slate-900/90 p-4 shadow-soft"
+                >
+                  <p class="text-sm font-semibold text-slate-50">
+                    Transparente Preise – kein Kleingedrucktes.
+                  </p>
+                  <p class="mt-2 text-xs sm:text-sm text-slate-300">
+                    Die genauen Kosten für Grundbetrag, Fahrstunden,
+                    Sonderfahrten und Prüfungen hängen von deiner
+                    Führerscheinklasse und der Behörde ab. Wir erklären dir
+                    alles Schritt für Schritt.
+                  </p>
+                  <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+                    <li>· Faire, nachvollziehbare Preisstruktur</li>
+                    <li>· Übersichtliche Aufstellung aller Gebühren</li>
+                    <li>· Persönliche Beratung, welche Klasse zu dir passt</li>
+                  </ul>
+                  <button
+                    type="button"
+                    class="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-2 text-xs font-semibold text-slate-950 shadow-soft hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                    onclick="document.getElementById('kontakt-v2').scrollIntoView({behavior:'smooth'})"
+                  >
+                    Persönliche Preisauskunft anfordern
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Crash-Kurs Fokus -->
+        <section
+          id="crash-kurs-v2"
+          class="py-12 md:py-16 bg-gradient-to-r from-sky-950 via-slate-950 to-slate-950 border-b border-slate-800/70"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 js-fade-in">
+            <div
+              class="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-center"
+            >
+              <div>
+                <div
+                  class="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300 ring-1 ring-emerald-500/50"
+                >
+                  Crash-Kurs Theorie
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Es sind noch Plätze frei!
+                </div>
+                <h2
+                  class="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50"
+                >
+                  In wenigen Tagen zur Theorieprüfung –
+                  <span class="text-brand-soft">ohne Lernstress.</span>
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-300">
+                  Du möchtest die Theorie schnell abhaken? Im Crash-Kurs
+                  kombinieren wir kompakte Einheiten mit viel Praxisbezug,
+                  interaktiven Lernphasen und klaren Lernzielen.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs sm:text-sm text-slate-300">
+                  <li>· Blockunterricht – ideal in den Ferien</li>
+                  <li>· Aktuelle Lehrsoftware &amp; Prüfungssimulation</li>
+                  <li>· Persönliche Vorbereitung auf deinen Prüftermin</li>
+                </ul>
+                <div class="mt-5 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    class="inline-flex items-center justify-center rounded-full bg-brand-soft px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-soft hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                    onclick="document.getElementById('kontakt-v2').scrollIntoView({behavior:'smooth'})"
+                  >
+                    Platz im Crash-Kurs anfragen
+                  </button>
+                  <a
+                    href="#theorieplan-v2"
+                    class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/40 px-5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft"
+                  >
+                    Theoriezeiten ansehen
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="rounded-3xl border border-slate-800 bg-slate-950/80 p-5 shadow-soft"
+              >
+                <h3 class="text-sm font-semibold text-slate-50">
+                  Crash-Kurs auf einen Blick
+                </h3>
+                <dl class="mt-3 space-y-2 text-xs text-slate-300">
+                  <div class="flex justify-between gap-3">
+                    <dt>Ort</dt>
+                    <dd class="text-right">
+                      Zum Stadion 71, 40764 Langenfeld (Rheinland)
+                    </dd>
+                  </div>
+                  <div class="flex justify-between gap-3">
+                    <dt>Dauer</dt>
+                    <dd class="text-right">
+                      Kompakte Theorieblöcke – Termine nach Absprache
+                    </dd>
+                  </div>
+                  <div class="flex justify-between gap-3">
+                    <dt>Klassen</dt>
+                    <dd class="text-right">
+                      Schwerpunkt Klasse B &amp; Motorrad (A)
+                    </dd>
+                  </div>
+                </dl>
+                <p class="mt-4 text-[11px] text-slate-400">
+                  Die aktuellen Termine und Unterlagen zum Führerscheinantrag
+                  erhältst du direkt bei uns im Büro, per E‑Mail oder WhatsApp.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Kontakt & Lead Formular v2 -->
+        <section
+          id="kontakt-v2"
+          class="py-12 md:py-16 bg-slate-950 border-b border-slate-800/70"
+        >
+          <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.9fr)] items-start js-fade-in"
+            >
+              <div>
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-soft"
+                >
+                  Night Mode Anfrage
+                </p>
+                <h2
+                  class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight text-slate-50"
+                >
+                  Welchen Führerschein möchtest du
+                  <span class="text-brand-soft">als Nächstes angehen?</span>
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-slate-300">
+                  Zwei Klicks, ein kurzer Eintrag – und wir melden uns mit
+                  Terminvorschlägen und allen Infos rund um deinen
+                  Führerschein.
+                </p>
+
+                <form
+                  class="mt-6 space-y-5"
+                  action="mailto:fahrschule-hartinger@ish.de"
+                  method="post"
+                  enctype="text/plain"
+                >
+                  <div>
+                    <label
+                      class="block text-xs font-semibold uppercase tracking-[0.18em] text-slate-400"
+                    >
+                      Führerscheinklasse
+                    </label>
+                    <p class="mt-1 text-xs text-slate-500">
+                      Wähle aus, was auf dich zutrifft:
+                    </p>
+                    <div
+                      class="mt-3 flex flex-wrap gap-2"
+                      data-license-group
+                    >
+                      <button
+                        type="button"
+                        class="license-chip inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft"
+                        data-license-option="B"
+                      >
+                        <span
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/20 text-[11px] text-sky-200"
+                          >B</span
+                        >
+                        Auto (Klasse B)
+                      </button>
+                      <button
+                        type="button"
+                        class="license-chip inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft"
+                        data-license-option="A"
+                      >
+                        <span
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-[11px] text-emerald-200"
+                          >A</span
+                        >
+                        Motorrad (Klasse A)
+                      </button>
+                      <button
+                        type="button"
+                        class="license-chip inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft"
+                        data-license-option="BE"
+                      >
+                        <span
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/20 text-[11px] text-amber-200"
+                          >BE</span
+                        >
+                        Anhänger (BE)
+                      </button>
+                      <button
+                        type="button"
+                        class="license-chip inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs font-medium text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft"
+                        data-license-option="auffrischung"
+                      >
+                        <span
+                          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-500/30 text-[11px] text-slate-100"
+                          >∞</span
+                        >
+                        Auffrischungsstunden
+                      </button>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="fuehrerschein"
+                      id="fuehrerschein-input"
+                    />
+                  </div>
+
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label
+                        for="name"
+                        class="block text-xs font-medium text-slate-200"
+                        >Dein Name *</label
+                      >
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="mt-1 block w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-sm placeholder:text-slate-500 focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand-soft/60"
+                        placeholder="Max Mustermann"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="telefon"
+                        class="block text-xs font-medium text-slate-200"
+                        >Handynummer *</label
+                      >
+                      <input
+                        type="tel"
+                        id="telefon"
+                        name="telefon"
+                        required
+                        class="mt-1 block w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-sm placeholder:text-slate-500 focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand-soft/60"
+                        placeholder="z. B. 0172 / 211 28 60"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label
+                        for="email"
+                        class="block text-xs font-medium text-slate-200"
+                        >E-Mail (optional)</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="mt-1 block w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-sm placeholder:text-slate-500 focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand-soft/60"
+                        placeholder="deine@mailadresse.de"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        for="kontaktart"
+                        class="block text-xs font-medium text-slate-200"
+                        >Wie dürfen wir dich kontaktieren?</label
+                      >
+                      <select
+                        id="kontaktart"
+                        name="kontaktart"
+                        class="mt-1 block w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-sm focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand-soft/60"
+                      >
+                        <option value="telefon">
+                          Telefonisch anrufen
+                        </option>
+                        <option value="whatsapp">
+                          WhatsApp-Nachricht
+                        </option>
+                        <option value="email">E-Mail</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      for="nachricht"
+                      class="block text-xs font-medium text-slate-200"
+                      >Deine Nachricht (optional)</label
+                    >
+                    <textarea
+                      id="nachricht"
+                      name="nachricht"
+                      rows="3"
+                      class="mt-1 block w-full rounded-xl border border-slate-700 bg-slate-900/80 px-3 py-2 text-sm text-slate-50 shadow-sm placeholder:text-slate-500 focus:border-brand-soft focus:outline-none focus:ring-2 focus:ring-brand-soft/60"
+                      placeholder="z. B. Wunschtermine, ob du schon einen Führerschein hast oder Fragen zum Crash-Kurs."
+                    ></textarea>
+                  </div>
+
+                  <div class="space-y-3">
+                    <label class="flex items-start gap-2 text-xs text-slate-400">
+                      <input
+                        type="checkbox"
+                        name="datenschutz"
+                        required
+                        class="mt-0.5 h-3.5 w-3.5 rounded border-slate-600 bg-slate-900 text-brand-soft focus:ring-brand-soft/60"
+                      />
+                      <span>
+                        Ich bin damit einverstanden, dass meine Angaben zur
+                        Kontaktaufnahme und für Rückfragen gespeichert und
+                        verarbeitet werden. Weitere Informationen findest du in
+                        unserer Datenschutzerklärung.
+                      </span>
+                    </label>
+                    <button
+                      type="submit"
+                      class="inline-flex w-full items-center justify-center rounded-full bg-brand-soft px-6 py-3 text-sm font-semibold text-slate-950 shadow-soft hover:bg-brand-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                    >
+                      Unverbindliche Anfrage senden
+                    </button>
+                    <p class="text-[11px] text-slate-500">
+                      Deine Anfrage ist kostenlos und unverbindlich. Wir melden
+                      uns zeitnah mit den nächsten Schritten.
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+              <aside
+                class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5 shadow-soft js-fade-in"
+              >
+                <h3 class="text-sm font-semibold text-slate-50">
+                  Direkt zur Fahrschule Hartinger
+                </h3>
+                <dl class="mt-3 space-y-2 text-xs sm:text-sm text-slate-300">
+                  <div>
+                    <dt class="font-medium text-slate-100">Adresse</dt>
+                    <dd>
+                      Zum Stadion 71<br />
+                      40764 Langenfeld (Rheinland)
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="font-medium text-slate-100">Telefon</dt>
+                    <dd>
+                      <a
+                        href="tel:+492173687036"
+                        class="text-brand-soft hover:text-brand-strong"
+                        >02173 / 68 70 36</a
+                      >
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="font-medium text-slate-100">E-Mail</dt>
+                    <dd>
+                      <a
+                        href="mailto:fahrschule-hartinger@ish.de"
+                        class="text-brand-soft hover:text-brand-strong"
+                        >fahrschule-hartinger@ish.de</a
+                      >
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="font-medium text-slate-100">
+                      Öffnungszeiten Büro
+                    </dt>
+                    <dd>Montag bis Mittwoch · 16:30 – 18:30 Uhr</dd>
+                  </div>
+                  <div>
+                    <dt class="font-medium text-slate-100">
+                      Theorieunterricht
+                    </dt>
+                    <dd>Montag, Dienstag, Mittwoch · 18:30 – 20:00 Uhr</dd>
+                  </div>
+                </dl>
+                <div class="mt-4 flex flex-wrap gap-2 text-[11px] text-slate-400">
+                  <span
+                    class="inline-flex items-center rounded-full bg-slate-950 px-2 py-1 shadow-sm border border-slate-800"
+                    >Crash-Kurse möglich</span
+                  >
+                  <span
+                    class="inline-flex items-center rounded-full bg-slate-950 px-2 py-1 shadow-sm border border-slate-800"
+                    >Bike to Bike Motorradausbildung</span
+                  >
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sticky Bottom Contact Bar (Mobile) -->
+      <div
+        class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800 bg-slate-950/95 px-4 py-2 shadow-[0_-20px_45px_rgba(15,23,42,0.9)] md:hidden"
+      >
+        <div class="max-w-6xl mx-auto flex items-center gap-3">
+          <button
+            type="button"
+            class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-2 text-xs font-semibold text-slate-100 shadow-sm hover:border-brand-soft hover:text-brand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-soft"
+            onclick="window.location.href='tel:+492173687036'"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                d="M5 4h3l2 5-2 1a11 11 0 0 0 5 5l1.1-2.1L19 15v3a2 2 0 0 1-2.2 2A15 15 0 0 1 4 7.2 2 2 0 0 1 5 4Z"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Anrufen
+          </button>
+          <button
+            type="button"
+            class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-emerald-500 px-3 py-2 text-xs font-semibold text-slate-950 shadow-soft hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            onclick="window.location.href='https://wa.me/4921722112860'"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                d="M5 19l1.1-3.3A7 7 0 1 1 12 19a7.2 7.2 0 0 1-3.4-.9L5 19Z"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9.5 9.5c0 .8.6 1.7 1.3 2.3.6.6 1.5 1.2 2.3 1.3.5 0 1-.4 1.3-.7.2-.2.2-.5 0-.8l-.6-1a.6.6 0 0 0-.7-.3l-.8.2a.4.4 0 0 1-.4-.1l-.8-.8a.4.4 0 0 1-.1-.4l.2-.8a.6.6 0 0 0-.3-.7l-1-.6c-.3-.2-.6-.2-.8 0-.3.2-.7.8-.7 1.3Z"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="mt-20 border-t border-slate-800 bg-slate-950">
+        <div
+          class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-xs sm:text-sm text-slate-500 space-y-6"
+        >
+          <div
+            class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+          >
+            <div class="space-y-1">
+              <p class="font-semibold text-slate-100">
+                Fahrschule Hartinger (Inh. Hartmut Hartinger)
+              </p>
+              <p>
+                Zum Stadion 71 · 40764 Langenfeld (Rheinland)<br />
+                Telefon:
+                <a
+                  href="tel:+492173687036"
+                  class="text-brand-soft hover:text-brand-strong"
+                  >02173 / 68 70 36</a
+                >
+                · E-Mail:
+                <a
+                  href="mailto:fahrschule-hartinger@ish.de"
+                  class="text-brand-soft hover:text-brand-strong"
+                  >fahrschule-hartinger@ish.de</a
+                >
+              </p>
+            </div>
+            <div class="space-y-1">
+              <p class="font-semibold text-slate-100">Rechtliches</p>
+              <p>
+                Umsatzsteuer-ID: 135/5099/1566<br />
+                Zuständige Aufsichtsbehörde: Straßenverkehrsamt Mettmann
+              </p>
+              <div class="flex gap-4 mt-1">
+                <a href="#" class="hover:text-brand-soft">Impressum</a>
+                <a href="#" class="hover:text-brand-soft">Datenschutz</a>
+              </div>
+            </div>
+          </div>
+          <p class="text-center text-[11px] text-slate-600">
+            &copy; <span id="year-v2"></span> Fahrschule Hartinger. Alle Rechte
+            vorbehalten.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Interaktionen v2 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Jahr
+        var yearEl = document.getElementById("year-v2");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+
+        // Mobile Navigation
+        var menuToggle = document.querySelector("[data-mobile-menu-toggle]");
+        var mobileMenu = document.querySelector("[data-mobile-menu]");
+        if (menuToggle && mobileMenu) {
+          menuToggle.addEventListener("click", function () {
+            var isHidden = mobileMenu.classList.contains("hidden");
+            mobileMenu.classList.toggle("hidden", !isHidden);
+            menuToggle.setAttribute("aria-expanded", isHidden ? "true" : "false");
+          });
+        }
+
+        // Scroll-Fade-In
+        var fadeEls = document.querySelectorAll(".js-fade-in");
+        if ("IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 }
+          );
+          fadeEls.forEach(function (el) {
+            observer.observe(el);
+          });
+        } else {
+          fadeEls.forEach(function (el) {
+            el.classList.add("is-visible");
+          });
+        }
+
+        // Fahrzeug-Slider
+        var sliderTrack = document.querySelector("[data-vehicle-slider-track]");
+        var sliderPrevBtns = document.querySelectorAll(
+          "[data-vehicle-slider-prev]"
+        );
+        var sliderNextBtns = document.querySelectorAll(
+          "[data-vehicle-slider-next]"
+        );
+
+        if (sliderTrack) {
+          function scrollSlider(direction) {
+            var firstCard = sliderTrack.querySelector("article");
+            var amount =
+              (firstCard ? firstCard.clientWidth : sliderTrack.clientWidth) +
+              16;
+            sliderTrack.scrollBy({
+              left: direction * amount,
+              behavior: "smooth",
+            });
+          }
+
+          sliderPrevBtns.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              scrollSlider(-1);
+            });
+          });
+          sliderNextBtns.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              scrollSlider(1);
+            });
+          });
+        }
+
+        // Führerschein-Typ Chips (teilen sich die gleiche Logik wie v1)
+        var licenseGroup = document.querySelector("[data-license-group]");
+        var licenseInput = document.getElementById("fuehrerschein-input");
+        if (licenseGroup && licenseInput) {
+          licenseGroup.addEventListener("click", function (event) {
+            var target = event.target.closest("[data-license-option]");
+            if (!target) return;
+
+            var value = target.getAttribute("data-license-option");
+            licenseInput.value = value;
+
+            var chips = licenseGroup.querySelectorAll("[data-license-option]");
+            chips.forEach(function (chip) {
+              chip.classList.remove(
+                "bg-brand",
+                "bg-brand-soft",
+                "text-slate-950",
+                "text-white",
+                "shadow-soft",
+                "border-brand",
+                "border-brand-soft"
+              );
+              chip.classList.add(
+                "bg-slate-900/80",
+                "text-slate-100",
+                "border-slate-700"
+              );
+            });
+
+            target.classList.remove(
+              "bg-slate-900/80",
+              "text-slate-100",
+              "border-slate-700"
+            );
+            target.classList.add(
+              "bg-brand-soft",
+              "text-slate-950",
+              "shadow-soft",
+              "border-brand-soft"
+            );
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+
